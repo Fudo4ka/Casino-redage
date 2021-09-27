@@ -1,0 +1,16 @@
+
+
+заменить где mp.keys.bind(Keys.VK_E, false, function () 
+
+на вот это
+
+mp.keys.bind(Keys.VK_E, false, function () { // E key
+    if (!loggedin || chatActive || editing || new Date().getTime() - lastCheck < 1000) return;
+    if(global.casinoOpened){
+        mp.events.callRemote('interactionPressed');
+    }
+    if( global.menuOpened) return;
+    mp.events.callRemote('interactionPressed');
+    lastCheck = new Date().getTime();
+    global.acheat.pos();
+});

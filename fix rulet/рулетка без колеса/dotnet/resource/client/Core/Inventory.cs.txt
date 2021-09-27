@@ -1,0 +1,45 @@
+в ItemsNames
+
+вставить
+
+{224, "Фишки" },
+
+
+
+
+в ItemModels
+
+вставить 
+
+{ ItemType.CasinoChips, 3045218749 },
+
+
+
+
+
+В ItemsPosOffset
+
+вставить
+
+ { ItemType.CasinoChips, new Vector3(0, 0, -0.6) },
+
+
+
+
+
+В ItemsRotOffset
+
+вставить 
+
+{ ItemType.CasinoChips, new Vector3() },
+
+
+
+
+
+
+В ItemsStacks
+
+вставить 
+
+{ ItemType.CasinoChips, 1000000 },

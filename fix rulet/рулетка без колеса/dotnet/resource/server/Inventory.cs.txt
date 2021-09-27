@@ -1,0 +1,6 @@
+public enum ItemType
+{
+
+  CasinoChips = 224,
+
+}

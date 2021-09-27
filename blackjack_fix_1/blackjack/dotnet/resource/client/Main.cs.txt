@@ -1,0 +1,26 @@
+
+
+// find 
+ [RemoteEvent("interactionPressed")]
+        public void ClientEvent_interactionPressed(Player player, params object[] arguments)
+
+
+
+
+
+// paste this to start
+
+   if (player.HasData("BJ_TABLE"))
+            {
+                BlackJack.Exit(player);
+                return;
+            }
+
+
+
+// and paste to finish
+
+
+   case 663:
+                        BlackJack.Seat(player, player.GetData<int>("TABLE"), player.GetData<int>("SEAT"));
+                        return;

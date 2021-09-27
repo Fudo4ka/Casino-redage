@@ -1,0 +1,55 @@
+global.casinoOpened = false;
+
+
+
+global.casinoClose = function () {
+    global.casinoOpened = false;
+    global.menuOpened = false;
+    mp.gui.cursor.visible = false;
+}
+global.casinoOpen = function () {
+    mp.gui.cursor.visible = true;
+    global.casinoOpened = true;
+    global.menuOpened = true;
+}
+
+
+mp.events.add('client_press_key_to', (act, data) => {
+    switch (act) {
+        case 'open':
+            if (global.menuCheck()) return;
+            global.menu.execute(`presskeyto.open('${data}')`);
+            break;
+        case 'close':
+            if (global.menuCheck()) return;
+            global.menu.execute(`presskeyto.close()`);
+            break;
+    }
+});
+
+mp.events.add('client_casino_bet', (act, data) => {
+    switch (act) {
+        case 'open':
+            if (global.menuCheck()) return;
+            global.casinoOpen();
+            global.menu.execute(`casino.show('${data}')`);
+            break;
+        case 'close':
+
+            global.casinoClose();
+            global.menu.execute(`casino.hide()`);
+            break;
+    }
+});
+
+mp.events.add('updateCasinoTime', (data) => {
+    global.menu.execute(`casino.setTimeToStart('${data}')`);
+});
+
+mp.events.add('updateCasinoChips', (data) => {
+    global.menu.execute(`casino.setChips('${data}')`);
+});
+
+mp.events.add('exitRoultteUI', () => {
+    mp.events.callRemote('interactionPressed', 1);
+});

@@ -1,0 +1,42 @@
+В  
+
+ [RemoteEvent("interactionPressed")]
+        public void ClientEvent_interactionPressed(Player player, params object[] arguments)
+
+
+вставить в самое начало после 
+
+ [RemoteEvent("interactionPressed")]
+        public void ClientEvent_interactionPressed(Player player, params object[] arguments)
+{
+
+
+
+это
+
+ if (player.HasData("RL_TABLE"))
+            {
+                DiamondCasino.ExitRoulette(player);
+                return;
+            }
+
+
+в switch добавить это
+
+
+
+   case 653:
+                        DiamondCasino.EnterCasino(player);
+                        return;
+                    case 654:
+                        DiamondCasino.ExitCasino(player);
+                        return;
+                    case 662:
+                        DiamondCasino.OpenChipsMenu(player);
+                        return;
+                    case 664:
+                        if (!player.HasData("RL_TABLE"))
+                            DiamondCasino.SeatAtRoulette(player, player.GetData<int>("TABLE"));
+                        else
+                            DiamondCasino.ExitRoulette(player);
+                        return;

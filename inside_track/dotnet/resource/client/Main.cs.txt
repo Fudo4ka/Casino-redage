@@ -1,0 +1,31 @@
+// find 
+
+   [RemoteEvent("interactionPressed")]
+        public void ClientEvent_interactionPressed(Player player, params object[] arguments)
+       
+
+// and after paste this
+
+ if (player.HasData("IT_SEAT"))
+            {
+                InsideTrack.EixtTable(player);
+                return;
+            }
+
+
+
+
+
+// in 
+
+  switch (id)
+                {
+
+
+
+// paste this
+
+
+  case 1050:
+                        InsideTrack.SeatAtTable(player);
+                        break;

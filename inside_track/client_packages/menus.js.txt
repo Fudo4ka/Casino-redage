@@ -1,0 +1,12 @@
+mp.events.add('client_press_key_to', (act, data) => {
+    switch (act) {
+        case 'open':
+            if (global.menuCheck()) return;
+            global.menu.execute(`presskeyto.open('${data}')`);
+            break;
+        case 'close':
+            if (global.menuCheck()) return;
+            global.menu.execute(`presskeyto.close()`);
+            break;
+    }
+});

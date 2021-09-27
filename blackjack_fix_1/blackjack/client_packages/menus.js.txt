@@ -1,0 +1,24 @@
+global.casinoKeys = mp.browsers.new('package://cef/UI/CasinoKeys/index.html');
+
+mp.events.add('casinoKeys', (act, ...data) => {
+    switch (act) {
+        case 'setChips':
+            global.casinoKeys.execute(`casinoKeys.setChips('${data[0]}', '${data[1]}')`);
+            break;
+        case 'setBet':
+            global.casinoKeys.execute(`casinoKeys.setBet('${data[0]}', '${data[1]}')`);
+            break;
+        case 'setTime':
+            global.casinoKeys.execute(`casinoKeys.setTime('${data[0]}', '${data[1]}')`);
+            break;
+        case 'toggleStart':
+            global.casinoKeys.execute(`casinoKeys.toggleStart(${data[0]})`);
+            break;
+        case 'show':
+            global.casinoKeys.execute(`casinoKeys.show()`);
+            break;
+        case 'hide':
+            global.casinoKeys.execute(`casinoKeys.hide()`);
+            break;
+    }
+});

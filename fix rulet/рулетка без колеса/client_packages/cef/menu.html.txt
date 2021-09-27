@@ -1,0 +1,47 @@
+    <link rel="stylesheet" href="css/presskeyto.css">
+    <link rel="stylesheet" href="css/casinobet.css">
+
+
+
+<div class="press-key-to" v-if="active">
+        <div class="press-key-to-text">
+            Нажмите <span>{{items[0]}}</span>, чтобы <span>{{items[1]}}</span>
+        </div>
+    </div>
+    <div class="casino-bet" v-if="active">
+        <div class="casino-bet__center" @click="close">
+            <svg width="2.314814814814815vh" height="1.9444444444444444vh" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 19.25C18.253 19.25 22.9167 15.3325 22.9167 10.5C22.9167 5.66751 18.253 1.75 12.5 1.75C6.74703 1.75 2.08333 5.66751 2.08333 10.5C2.08333 15.3325 6.74703 19.25 12.5 19.25Z" stroke="#FD0000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.625 7.875L9.375 13.125" stroke="#FF0707" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.375 7.875L15.625 13.125" stroke="#FF0000" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="casino-bet__right">
+            <div class="casino-bet__right-top">
+                <div class="casino-bet__bet casino-bet__bet_chips">
+                    {{chips}}
+                </div>
+            </div>
+            <div class="casino-bet__right-bottom">
+                До начала {{timeToStart}} сек
+            </div>
+        </div>
+        <div class="casino-bet__left">
+            <div class="casino-bet__top">
+                <div class="casino-bet__black-text">Ставка:</div>
+                <div class="casino-bet__bet">
+                    {{val}}
+                </div>
+                <div class="casino-bet__black-text">фишек</div>
+            </div>
+            <div class="casino-bet__bottom">
+                <div @click="minusAct" class="casino-bet__btn casino-bet__btn_left">-{{minus}}</div>
+                <div @click="accept" class="casino-bet__btn casino-bet__btn_center">Готово</div>
+                <div @click="plusAct" class="casino-bet__btn casino-bet__btn_right">+{{plus}}</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/presskeyto.js"></script>
+    <script src="js/casinobet.js"></script>
+
